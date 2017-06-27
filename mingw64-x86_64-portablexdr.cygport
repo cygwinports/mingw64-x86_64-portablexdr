@@ -1,0 +1,17 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-portablexdr"
+VERSION=4.9.1
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="XDR library for Win64 toolchain"
+DESCRIPTION="Portable XDR is an XDR (RFC 4506) library for Unix, Linux, Windows,
+and Mac OS X.  It supports the XDR functions required to build libvirt."
+HOMEPAGE="https://people.redhat.com/~rjones/portablexdr/"
+SRC_URI="${HOMEPAGE}/files/portablexdr-${VERSION}.tar.gz"
+SRC_DIR="portablexdr-${VERSION}"
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/rpms/mingw-portablexdr.git/plain/portablexdr-4.9.1-no-config-h.patch
+	http://pkgs.fedoraproject.org/cgit/rpms/mingw-portablexdr.git/plain/portablexdr-build-use-intptr_t-and-uintptr_t-to-cast-ptr-to-int.patch
+"
